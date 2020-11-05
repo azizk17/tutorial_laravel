@@ -2,5 +2,6 @@
     "Tutorial": true,
     "Admin": true,
     "Blog": true,
-    "Site": true
+    "Site": true,
+    "Core": true
 }

@@ -1,14 +1,12 @@
 <?php
 
-namespace Modules\Blog\Http\Controllers;
+namespace Modules\Core\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Inertia\Inertia;
-use Modules\Blog\Entities\Post;
 
-class BlogController extends Controller
+class CoreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +14,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return Inertia::render('blog::Index', ['posts' => $posts]);
+        return view('core::index');
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -27,7 +23,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('blog::create');
+        return view('core::create');
     }
 
     /**
@@ -47,7 +43,7 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        return view('blog::show');
+        return view('core::show');
     }
 
     /**
@@ -57,7 +53,7 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        return view('blog::edit');
+        return view('core::edit');
     }
 
     /**

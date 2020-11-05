@@ -5,10 +5,8 @@ namespace Modules\Blog\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Inertia\Inertia;
-use Modules\Blog\Entities\Post;
 
-class BlogController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +14,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return Inertia::render('blog::Index', ['posts' => $posts]);
+        return view('blog::index');
     }
-
 
     /**
      * Show the form for creating a new resource.

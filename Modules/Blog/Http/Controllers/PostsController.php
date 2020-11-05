@@ -5,10 +5,12 @@ namespace Modules\Blog\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Inertia\Inertia;
 use Modules\Blog\Entities\Post;
+use Inertia\Inertia;
+use Modules\Blog\Http\Requests\StorePostRequest;
+use Modules\Blog\Http\Requests\UpdatePostRequest;
 
-class BlogController extends Controller
+class PostsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +18,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return Inertia::render('blog::Index', ['posts' => $posts]);
+        return Inertia::render('blog::Post/Index');
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -27,7 +27,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('blog::create');
+        return Inertia::render('blog::Post/Create');
     }
 
     /**
@@ -35,7 +35,7 @@ class BlogController extends Controller
      * @param Request $request
      * @return Renderable
      */
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
         //
     }
@@ -47,7 +47,8 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        return view('blog::show');
+        $post = Post::find($id);
+        return Inertia::render('blog::Post/Show', ['post' => $post]);
     }
 
     /**
@@ -57,7 +58,8 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        return view('blog::edit');
+        $post = Post::find($id);
+        return Inertia::render('blog::Post/Edit', ['post' => $post]);
     }
 
     /**
@@ -66,9 +68,11 @@ class BlogController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function update(Request $request, $id)
+    public function update(UpdatePostRequest $request, $id)
     {
-        //
+        $post = Post::find($id);
+        $post->update($request);
+        return back();
     }
 
     /**

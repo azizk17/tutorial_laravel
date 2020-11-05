@@ -23,8 +23,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/admin', function () {
-    return Inertia\Inertia::render('Admin');
+    return Inertia\Inertia::render('Admin/Index');
 })->name('admin');
-
-
 
