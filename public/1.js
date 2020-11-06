@@ -193,7 +193,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "bg-white overflow-hidden shadow-xl sm:rounded-lg" },
+    { staticClass: "bg-white overflow-hidden shadow-xl sm:rounded-lg p-6" },
     [_vm._t("default")],
     2
   )

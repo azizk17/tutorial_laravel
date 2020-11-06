@@ -25,5 +25,8 @@
         "tailwindcss-dir": "^4.0.0",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10"
+    },
+    "dependencies": {
+        "matice": "^1.1.1"
     }
 }

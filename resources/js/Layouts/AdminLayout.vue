@@ -1,6 +1,8 @@
 <template>
     <div class="min-h-screen bg-gray-100">
         <nav class="bg-white border-b border-gray-100">
+            emerging
+            {{ appName }}
             <!-- Primary Navigation Menu -->
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between h-16">
@@ -359,14 +361,14 @@
             </div>
         </nav>
 
-        <div class=" flex flex-row h-full w-full bg-red-500 justify-between">
+        <div class=" flex flex-row h-full w-full justify-between">
             <!-- Page Heading -->
             <div
                 class=" w-3/12 mx-auto bg-purple-700 h-screen overflow-y-scroll overflow-x-hidden"
             >
                 <side-nav />
             </div>
-            <div class="w-9/12 bg-gray-400">
+            <div class="w-9/12">
                 <header class="bg-white shadow">
                     <div class="max-w-7xl mx-auto p-2 sm:px-6 lg:px-8">
                         <slot name="header" class=" w-full"></slot>
@@ -438,6 +440,9 @@ export default {
         path() {
             return window.location.pathname;
         }
+    },
+    mounted() {
+        console.log(this.$page);
     }
 };
 </script>
