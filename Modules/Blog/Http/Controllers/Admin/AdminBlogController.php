@@ -4,6 +4,8 @@ namespace Modules\Blog\Http\Controllers\Admin;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+
 use Illuminate\Routing\Controller;
 use Modules\Blog\Entities\Post;
 use Inertia\Inertia;
@@ -18,7 +20,8 @@ class AdminBlogController extends Controller
      */
     public function index()
     {
-        return Inertia::render('blog::Admin/Index');
+        $posts = Post::all();
+        return Inertia::render('blog::Admin/Index', ['posts' => $posts]);
     }
 
     /**
@@ -37,7 +40,8 @@ class AdminBlogController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        //
+        $post = Post::create($request->all());
+        return Redirect::back()->with('success', 'post created.');
     }
 
     /**

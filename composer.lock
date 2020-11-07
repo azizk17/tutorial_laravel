@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2cb84f48993a71fe9f768eb78f48cb4e",
+    "content-hash": "0c2d1c9f248ff35b24d3830c9b80537e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -734,24 +734,23 @@
         },
         {
             "name": "genl/matice",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GENL/matice.git",
-                "reference": "6e56d21695d2e67072dcffaa5d27f030e4bf758d"
+                "reference": "3ff6b1ca7ba40a05df5bb13bee3d2763f65cabe7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GENL/matice/zipball/6e56d21695d2e67072dcffaa5d27f030e4bf758d",
-                "reference": "6e56d21695d2e67072dcffaa5d27f030e4bf758d",
+                "url": "https://api.github.com/repos/GENL/matice/zipball/3ff6b1ca7ba40a05df5bb13bee3d2763f65cabe7",
+                "reference": "3ff6b1ca7ba40a05df5bb13bee3d2763f65cabe7",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": ">=5.4@dev"
+                "laravel/framework": ">=6.0@dev"
             },
             "require-dev": {
-                "orchestra/testbench": "^5.0",
-                "phpunit/phpunit": "^8.0"
+                "orchestra/testbench": "^5.0"
             },
             "type": "library",
             "extra": {
@@ -789,9 +788,9 @@
             ],
             "support": {
                 "issues": "https://github.com/GENL/matice/issues",
-                "source": "https://github.com/GENL/matice/tree/1.1.1"
+                "source": "https://github.com/GENL/matice/tree/1.1.2"
             },
-            "time": "2020-10-16T02:41:29+00:00"
+            "time": "2020-11-06T20:07:19+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -3247,6 +3246,66 @@
                 }
             ],
             "time": "2020-08-18T17:17:46+00:00"
+        },
+        {
+            "name": "spatie/laravel-sluggable",
+            "version": "2.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-sluggable.git",
+                "reference": "49c491cc28a6ed5cd23936c8d59ffc24f8319762"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-sluggable/zipball/49c491cc28a6ed5cd23936c8d59ffc24f8319762",
+                "reference": "49c491cc28a6ed5cd23936c8d59ffc24f8319762",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^7.0|^8.0",
+                "illuminate/support": "^7.0.5|^8.0",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "orchestra/testbench": "^5.0|^6.0",
+                "spatie/laravel-translatable": "^4.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Sluggable\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Generate slugs when saving Eloquent models",
+            "homepage": "https://github.com/spatie/laravel-sluggable",
+            "keywords": [
+                "laravel-sluggable",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-sluggable/issues",
+                "source": "https://github.com/spatie/laravel-sluggable/tree/2.6.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-10-28T12:03:25+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

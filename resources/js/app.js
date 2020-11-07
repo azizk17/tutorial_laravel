@@ -24,7 +24,7 @@ const app = document.getElementById("app");
 
 Vue.mixin({
     methods: {
-        $trans: trans,
+        $t: trans,
         $__: __,
         $transChoice: transChoice,
         $setLocale: (locale) => {

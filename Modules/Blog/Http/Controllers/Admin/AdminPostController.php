@@ -9,6 +9,8 @@ use Modules\Blog\Entities\Post;
 use Inertia\Inertia;
 use Modules\Blog\Http\Requests\StorePostRequest;
 use Modules\Blog\Http\Requests\UpdatePostRequest;
+use Illuminate\Support\Facades\Redirect;
+use Modules\Blog\Entities\Category;
 
 class AdminPostController extends Controller
 {
@@ -27,7 +29,8 @@ class AdminPostController extends Controller
      */
     public function create()
     {
-        return Inertia::render('blog::Admin/PostCreate');
+        $categories = Category::all();
+        return Inertia::render('blog::Admin/PostCreate', ['categories' => $categories]);
     }
 
     /**
@@ -37,7 +40,8 @@ class AdminPostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        //
+        $post = Post::create($request->all());
+        return Redirect::back()->with('success', 'post created.');
     }
 
     /**
@@ -45,9 +49,9 @@ class AdminPostController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function show($id)
+    public function show($slug)
     {
-        $post = Post::find($id);
+        $post = Post::findOrFail($slug);
         return Inertia::render('blog::Admin/PostShow', ['post' => $post]);
     }
 

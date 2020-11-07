@@ -80,6 +80,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AdminLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/AdminLayout */ "./resources/js/Layouts/AdminLayout.vue");
 /* harmony import */ var _Components_Card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/Card */ "./resources/js/Components/Card.vue");
+/* harmony import */ var _Jetstream_NavLink__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Jetstream/NavLink */ "./resources/js/Jetstream/NavLink.vue");
 //
 //
 //
@@ -96,12 +97,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     AdminLayout: _Layouts_AdminLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Card: _Components_Card__WEBPACK_IMPORTED_MODULE_1__["default"]
+    Card: _Components_Card__WEBPACK_IMPORTED_MODULE_1__["default"],
+    NavLink: _Jetstream_NavLink__WEBPACK_IMPORTED_MODULE_2__["default"]
   }
 });
 
@@ -149,8 +164,30 @@ var render = function() {
           key: "header",
           fn: function() {
             return [
-              _c("h1", { staticClass: " text-xl" }, [
-                _vm._v("\n            Blog Index\n        ")
+              _c("div", { staticClass: " flex flex-row justify-between" }, [
+                _c("h1", { staticClass: " text-xl" }, [
+                  _vm._v("\n                Blog Index\n            ")
+                ]),
+                _vm._v(" "),
+                _c("ul", [
+                  _c(
+                    "li",
+                    [
+                      _c(
+                        "nav-link",
+                        {
+                          attrs: { href: _vm.route("blog::admin.posts.create") }
+                        },
+                        [
+                          _vm._v(
+                            "\n                        Create Post\n                    "
+                          )
+                        ]
+                      )
+                    ],
+                    1
+                  )
+                ])
               ])
             ]
           },
@@ -160,11 +197,22 @@ var render = function() {
     },
     [
       _vm._v(" "),
-      _c("card", [
-        _vm._v(
-          "\n        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore\n        vero sequi a natus cupiditate sapiente! Ducimus, nobis possimus\n        nostrum minima magnam, odio nemo, ad sapiente tempora soluta ut eius\n        quaerat.\n    "
-        )
-      ])
+      _c(
+        "card",
+        _vm._l(_vm.$page.posts, function(post) {
+          return _c(
+            "nav-link",
+            {
+              key: post.slug,
+              attrs: {
+                href: _vm.route("blog::admin.posts.show", { post: post.slug })
+              }
+            },
+            [_vm._v("\n            " + _vm._s(post.title) + "\n        ")]
+          )
+        }),
+        1
+      )
     ],
     1
   )

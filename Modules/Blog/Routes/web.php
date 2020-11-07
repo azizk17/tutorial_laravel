@@ -41,6 +41,7 @@ Route::prefix('admin/blog')->middleware(['auth:sanctum', 'verified'])
         ->names([
             'index' => 'blog::admin.posts.index',
             'show' => 'blog::admin.posts.show',
+            'create' => 'blog::admin.posts.create',
             'edit' => 'blog::admin.posts.edit',
             'update' => 'blog::admin.posts.update',
             'store' => 'blog::admin.posts.store',
